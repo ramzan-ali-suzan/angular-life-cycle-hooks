@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
   userName = 'Masud';
   adminUser = { name: 'Zafor', role: 'admin' };
+  showDynamicPtag = false;
 
   update() {
     this.userName = 'Ramzan';
     this.adminUser.role = 'superAdmin';
+    this.showDynamicPtag = true;
   }
 
   ngOnInit(): void {
