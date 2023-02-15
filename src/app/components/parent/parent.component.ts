@@ -9,11 +9,16 @@ export class ParentComponent implements OnInit {
   userName = 'Masud';
   adminUser = { name: 'Zafor', role: 'admin' };
   showDynamicPtag = false;
+  isChildDestroyed = false;
 
   update() {
     this.userName = 'Ramzan';
     this.adminUser.role = 'superAdmin';
     this.showDynamicPtag = true;
+  }
+
+  destroy() {
+    this.isChildDestroyed = true;
   }
 
   ngOnInit(): void {

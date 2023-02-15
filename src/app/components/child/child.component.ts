@@ -1,11 +1,11 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
+export class ChildComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   @Input() userName = '';
   @Input() adminUser = { name: '', role: '' };
 
@@ -41,10 +41,14 @@ export class ChildComponent implements OnChanges, OnInit, DoCheck, AfterContentI
   }
 
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit - wrapper', this.wrapper);
+    // console.log('ngAfterViewInit - wrapper', this.wrapper);
   }
 
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked triggered');
+    // console.log('ngAfterViewChecked triggered');
+  }
+
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy from child component');
   }
 }

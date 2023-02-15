@@ -1,5 +1,7 @@
 <button (click)="update()">Update</button>
-<app-child [userName]="userName" [adminUser]="adminUser">
+<button (click)="destroy()">Destroy Child</button>
+
+<app-child *ngIf="!isChildDestroyed" [userName]="userName" [adminUser]="adminUser">
     <div #content>
         <h1>Dynamic h1 from parent</h1>
         <p *ngIf="showDynamicPtag">Dynamic p tag</p>
