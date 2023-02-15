@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   userName = 'Masud';
+  adminUser = { name: 'Zafor', role: 'admin' };
 
   update() {
     this.userName = 'Ramzan';
+    this.adminUser.role = 'superAdmin';
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit from the parent component');
+    // console.log('ngOnInit from the parent component');
   }
 }
